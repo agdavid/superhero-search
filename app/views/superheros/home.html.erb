@@ -1,0 +1,12 @@
+<script type="text/javascript">
+  var client = algoliasearch('ZSL0RJTCOE', '3f46604e5ceef1479ae2ca58ae4f0a71');
+  var index = client.initIndex('Superhero');
+
+  index.search('marvel', { hitsPerPage: 10, page: 0 })
+    .then(function searchDone(content) {
+      console.log(content)
+    })
+    .catch(function searchFailure(err) {
+      console.error(err);
+    })
+</script>

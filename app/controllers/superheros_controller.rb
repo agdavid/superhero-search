@@ -1,6 +1,9 @@
 class SuperherosController < ApplicationController
   before_action :set_superhero, only: [:show, :edit, :update, :destroy]
 
+  def home 
+  end
+
   # GET /superheros
   # GET /superheros.json
   def index
