@@ -1,28 +1,14 @@
-== README
+== Superhero Search (powered by Algolia)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Superhero Search, a Rails application providing search capabilities powered by the AlgoliaSearch gem!
 
-Things you may want to cover:
+To get started:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  * Clone the repository: `git clone git@github.com:agdavid/superhero-search.git`
+  * Run `bundle install`
+  * Create the database: `rake db:create`
+  * Migrate the database: `rake db:migrate`
+  * Load the superheros via rake task: `rake database:load_superheroes`
+  * Add your Algolia credentials in a `config/initializers/algoliasearch.rb` file
+  * Index your superheros on Algolia in the console: `Superhero.reindex`
+  * Fire up the server: `rails s`
