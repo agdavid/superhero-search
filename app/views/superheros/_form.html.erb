@@ -1,0 +1,57 @@
+<%= form_for(@superhero) do |f| %>
+  <% if @superhero.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@superhero.errors.count, "error") %> prohibited this superhero from being saved:</h2>
+
+      <ul>
+      <% @superhero.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :urlslug %><br>
+    <%= f.text_field :urlslug %>
+  </div>
+  <div class="field">
+    <%= f.label :id_status %><br>
+    <%= f.text_field :id_status %>
+  </div>
+  <div class="field">
+    <%= f.label :alignment %><br>
+    <%= f.text_field :alignment %>
+  </div>
+  <div class="field">
+    <%= f.label :eye %><br>
+    <%= f.text_field :eye %>
+  </div>
+  <div class="field">
+    <%= f.label :hair %><br>
+    <%= f.text_field :hair %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br>
+    <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :appearances %><br>
+    <%= f.number_field :appearances %>
+  </div>
+  <div class="field">
+    <%= f.label :first_appearance %><br>
+    <%= f.number_field :first_appearance %>
+  </div>
+  <div class="field">
+    <%= f.label :universe %><br>
+    <%= f.text_field :universe %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @superhero.name %>
+</p>
+
+<p>
+  <strong>Urlslug:</strong>
+  <%= @superhero.urlslug %>
+</p>
+
+<p>
+  <strong>Id status:</strong>
+  <%= @superhero.id_status %>
+</p>
+
+<p>
+  <strong>Alignment:</strong>
+  <%= @superhero.alignment %>
+</p>
+
+<p>
+  <strong>Eye:</strong>
+  <%= @superhero.eye %>
+</p>
+
+<p>
+  <strong>Hair:</strong>
+  <%= @superhero.hair %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @superhero.sex %>
+</p>
+
+<p>
+  <strong>Appearances:</strong>
+  <%= @superhero.appearances %>
+</p>
+
+<p>
+  <strong>First appearance:</strong>
+  <%= @superhero.first_appearance %>
+</p>
+
+<p>
+  <strong>Universe:</strong>
+  <%= @superhero.universe %>
+</p>
+
+<%= link_to 'Edit', edit_superhero_path(@superhero) %> |
+<%= link_to 'Back', superheros_path %>

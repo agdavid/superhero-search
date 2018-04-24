@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Superheros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Urlslug</th>
+      <th>Id status</th>
+      <th>Alignment</th>
+      <th>Eye</th>
+      <th>Hair</th>
+      <th>Sex</th>
+      <th>Appearances</th>
+      <th>First appearance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @superheros.each do |superhero| %>
+      <tr>
+        <td><%= superhero.name %></td>
+        <td><%= superhero.urlslug %></td>
+        <td><%= superhero.id_status %></td>
+        <td><%= superhero.alignment %></td>
+        <td><%= superhero.eye %></td>
+        <td><%= superhero.hair %></td>
+        <td><%= superhero.sex %></td>
+        <td><%= superhero.appearances %></td>
+        <td><%= superhero.first_appearance %></td>
+        <td><%= superhero.universe %></td>
+        <td><%= link_to 'Show', superhero %></td>
+        <td><%= link_to 'Edit', edit_superhero_path(superhero) %></td>
+        <td><%= link_to 'Destroy', superhero, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Superhero', new_superhero_path %>
