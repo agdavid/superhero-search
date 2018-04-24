@@ -1,7 +1,8 @@
 class SuperherosController < ApplicationController
   before_action :set_superhero, only: [:show, :edit, :update, :destroy]
 
-  def home 
+  def home
+    @superheros = Superhero.gather_heros(params)
   end
 
   # GET /superheros

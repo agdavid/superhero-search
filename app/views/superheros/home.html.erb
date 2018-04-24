@@ -1,12 +1,36 @@
 <script type="text/javascript">
-  var client = algoliasearch('ZSL0RJTCOE', '3f46604e5ceef1479ae2ca58ae4f0a71');
-  var index = client.initIndex('Superhero');
+  // JS for backend search
+  $(document).on('keyup', '.search-bar .form-control', function(e) {
+    var searchTerm = $(this).val();
 
-  index.search('marvel', { hitsPerPage: 10, page: 0 })
-    .then(function searchDone(content) {
-      console.log(content)
-    })
-    .catch(function searchFailure(err) {
-      console.error(err);
-    })
+    if (e.keyCode == 13) {
+      window.location.href = window.location.pathname + "?q=" + searchTerm;
+    }
+  })
+
 </script>
+
+<h1>Superhero Search: Rails Backend Search Using Algolia</h1>
+
+<div class="">
+  A results page generated through a backend search using the AlgoliaSearch Rails gem
+</div>
+
+<div class="search-bar form-group">
+  <% if params[:q] %><label for="">Searched for</label><% end %>
+  <input type="text" class="form-control" placeholder="Search by name, year of appearance, good/bad/neutral hero..." value="<%= params[:q] %>" autofocus>
+</div>
+
+<div class="heros row">
+  <% if @superheros.present? %>
+    <ul>
+      <% @superheros.each_with_index do |hero, i| %>
+        <li><%= hero.name %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <div class="">
+      <h1>No Superheros. Search for some!</h1>
+    </div>
+  <% end %>
+</div>
